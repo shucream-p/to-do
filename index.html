@@ -11,8 +11,9 @@
 
   <div id="app">
     <ul>
-      <li v-for="todo in todos">
+      <li v-for="(todo, index) in todos">
         {{ todo }}
+        <button @click="deleteItem(index)">削除</button>
       </li>
     </ul>
     <form @submit.prevent="addItem"> 
