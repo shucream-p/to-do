@@ -5,10 +5,11 @@ const app = new Vue({
     todos: []
   },
   methods: {
-    addItem: function() {
+    addItem() {
       const item = {
         title: this.newItem,
-        isDone: false
+        isDone: false,
+        isActive: false
       }
       this.todos.push(item)
       this.newItem = ''
@@ -17,6 +18,12 @@ const app = new Vue({
       if (confirm('削除してよろしいですか？')) {
         this.todos.splice(index, 1)
       }
+    },
+    editItem(index) {
+      this.todos[index].isActive = true
+    },
+    editDone(index) {
+      this.todos[index].isActive = false
     }
   }
 })
