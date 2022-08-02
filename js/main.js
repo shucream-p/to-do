@@ -6,7 +6,11 @@ const app = new Vue({
   },
   methods: {
     addItem: function() {
-      this.todos.push(this.newItem)
+      const item = {
+        title: this.newItem,
+        isDone: false
+      }
+      this.todos.push(item)
       this.newItem = ''
     },
     deleteItem(index) {

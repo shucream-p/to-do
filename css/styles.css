@@ -1,0 +1,13 @@
+#app ul {
+  padding: 0;
+  list-style: none;
+}
+
+#app li {
+  line-height: 1.5;
+}
+
+#app li > span.done {
+  text-decoration: line-through;
+  color: #bbb;
+}
