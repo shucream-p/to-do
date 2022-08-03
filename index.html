@@ -13,7 +13,7 @@
   <div id="app">
     <ul>
       <li v-for="(todo, index) in todos">
-        <input type="checkbox" v-model="todo.isDone">
+        <input type="checkbox" v-model="todo.isDone" @change="saveLocalStorage">
         <span :class="{done: todo.isDone}">{{ todo.title }}</span>
         <div v-show="todo.isActive">
           <input type="text" v-model="todo.title">

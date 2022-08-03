@@ -4,7 +4,13 @@ const app = new Vue({
     newItem: '',
     todos: []
   },
+  mounted: function() {
+    this.todos = JSON.parse(localStorage.getItem('todos')) || []
+  },
   methods: {
+    saveLocalStorage() {
+      localStorage.setItem('todos', JSON.stringify(this.todos))
+    },
     addItem() {
       const item = {
         title: this.newItem,
@@ -13,10 +19,12 @@ const app = new Vue({
       }
       this.todos.push(item)
       this.newItem = ''
+      this.saveLocalStorage()
     },
     deleteItem(index) {
       if (confirm('削除してよろしいですか？')) {
         this.todos.splice(index, 1)
+        this.saveLocalStorage()
       }
     },
     editItem(index) {
@@ -24,6 +32,7 @@ const app = new Vue({
     },
     editDone(index) {
       this.todos[index].isActive = false
+      this.saveLocalStorage()
     }
   }
 })
