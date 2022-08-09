@@ -15,7 +15,7 @@
         <div v-if="!todo.isActive">
           <input type="checkbox" v-model="todo.isDone" @change="saveLocalStorage">
           <span :class="{done: todo.isDone}" @click="editItem(index)">{{ todo.title }}</span>
-          <button @click="deleteItem(index)">削除</button>
+          <button @click="deleteItem(index)">delete</button>
         </div>
         <input v-else type="text" v-model="todo.title" @keydown.enter="editDone(index)" @blur="editDone(index)" v-focus>
       </li>
@@ -23,7 +23,7 @@
     </ul>
     <form @submit.prevent="addItem"> 
       <input type="text" v-model="newItem">
-      <input type="submit" value="追加">
+      <input type="submit" value="add">
     </form>
   </div>
 
