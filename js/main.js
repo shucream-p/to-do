@@ -7,6 +7,13 @@ const app = new Vue({
   mounted: function() {
     this.todos = JSON.parse(localStorage.getItem('todos')) || []
   },
+  directives: {
+    focus: {
+      inserted: function (el) {
+          el.focus()
+      }
+    }
+  },
   methods: {
     saveLocalStorage() {
       localStorage.setItem('todos', JSON.stringify(this.todos))
