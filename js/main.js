@@ -4,13 +4,13 @@ const app = new Vue({
     newItem: '',
     todos: []
   },
-  mounted: function() {
+  mounted () {
     this.todos = JSON.parse(localStorage.getItem('todos')) || []
   },
   directives: {
     focus: {
-      inserted: function (el) {
-          el.focus()
+      inserted (el) {
+        el.focus()
       }
     }
   },
