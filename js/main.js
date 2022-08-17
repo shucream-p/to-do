@@ -15,10 +15,10 @@ const app = new Vue({
     }
   },
   methods: {
-    saveLocalStorage() {
+    saveLocalStorage () {
       localStorage.setItem('todos', JSON.stringify(this.todos))
     },
-    addItem() {
+    addItem () {
       const item = {
         title: this.newItem,
         isDone: false,
@@ -28,20 +28,20 @@ const app = new Vue({
       this.newItem = ''
       this.saveLocalStorage()
     },
-    deleteItem(index) {
+    deleteItem (index) {
       if (confirm('削除してよろしいですか？')) {
         this.todos.splice(index, 1)
         this.saveLocalStorage()
       }
     },
-    editItem(index) {
+    editItem (index) {
       this.todos[index].isActive = true
     },
-    editCancel(index) {
+    editCancel (index) {
       this.todos[index].isActive = false
     },
-    editDone(event, index) {
-      if (event.keyCode !==13) return
+    editDone (event, index) {
+      if (event.keyCode !== 13) return
       this.todos[index].isActive = false
       this.saveLocalStorage()
     }
