@@ -18,6 +18,9 @@ const app = new Vue({
     saveLocalStorage () {
       localStorage.setItem('todos', JSON.stringify(this.todos))
     },
+    changeDone () {
+      this.saveLocalStorage()
+    },
     addItem () {
       const item = {
         title: this.newItem,
