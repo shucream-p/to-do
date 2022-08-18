@@ -41,6 +41,8 @@ const app = new Vue({
       this.todos[index].isEditing = true
     },
     cancelEdit (index) {
+      const todos = JSON.parse(localStorage.getItem('todos'))
+      this.todos[index].title = todos[index].title
       this.todos[index].isEditing = false
     },
     doneEdit (event, index) {
