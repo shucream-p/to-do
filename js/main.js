@@ -37,10 +37,10 @@ const app = new Vue({
     editItem (index) {
       this.todos[index].isEditing = true
     },
-    editCancel (index) {
+    cancelEdit (index) {
       this.todos[index].isEditing = false
     },
-    editDone (event, index) {
+    doneEdit (event, index) {
       if (event.keyCode !== 13) return
       this.todos[index].isEditing = false
       this.saveLocalStorage()
