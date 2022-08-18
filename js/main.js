@@ -1,4 +1,7 @@
-const app = new Vue({
+/* eslint-disable no-new */
+/* global Vue */
+
+new Vue({
   el: '#app',
   data: {
     newItem: '',
