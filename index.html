@@ -18,7 +18,7 @@
           <button @click="deleteItem(index)">delete</button>
         </div>
         <div v-else>
-          <input type="text" v-model="todo.title" @keydown.enter="doneEdit($event, index)" @blur="cancelEdit(index)" v-focus>
+          <input type="text" v-model="todo.title" @keypress.enter="doneEdit(index)" @blur="cancelEdit(index)" v-focus>
         </div>
       </li>
       <li v-show="!todos.length">ToDoはありません。</li>

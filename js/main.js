@@ -45,8 +45,7 @@ const app = new Vue({
       this.todos[index].title = todos[index].title
       this.todos[index].isEditing = false
     },
-    doneEdit (event, index) {
-      if (event.keyCode !== 13) return
+    doneEdit (index) {
       this.todos[index].isEditing = false
       this.saveLocalStorage()
     }
