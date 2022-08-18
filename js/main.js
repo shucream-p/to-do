@@ -23,6 +23,7 @@ const app = new Vue({
     },
     addItem () {
       const item = {
+        id: new Date().getTime().toString(),
         title: this.newItem,
         isDone: false,
         isEditing: false
