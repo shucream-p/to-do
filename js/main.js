@@ -22,7 +22,7 @@ const app = new Vue({
       const item = {
         title: this.newItem,
         isDone: false,
-        isActive: false
+        isEditing: false
       }
       this.todos.push(item)
       this.newItem = ''
@@ -35,14 +35,14 @@ const app = new Vue({
       }
     },
     editItem (index) {
-      this.todos[index].isActive = true
+      this.todos[index].isEditing = true
     },
     editCancel (index) {
-      this.todos[index].isActive = false
+      this.todos[index].isEditing = false
     },
     editDone (event, index) {
       if (event.keyCode !== 13) return
-      this.todos[index].isActive = false
+      this.todos[index].isEditing = false
       this.saveLocalStorage()
     }
   }

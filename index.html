@@ -12,7 +12,7 @@
     <h1>ToDo List</h1>
     <ul>
       <li v-for="(todo, index) in todos">
-        <div v-if="!todo.isActive">
+        <div v-if="!todo.isEditing">
           <input type="checkbox" v-model="todo.isDone" @change="saveLocalStorage">
           <span :class="{done: todo.isDone}" @click="editItem(index)">{{ todo.title }}</span>
           <button @click="deleteItem(index)">delete</button>
