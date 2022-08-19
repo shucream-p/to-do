@@ -1,0 +1,60 @@
+body {
+  font-size: 16px;
+  font-family: Verdana,sans-serif;
+}
+
+.container {
+  width: 300px;
+  margin: 0 auto;
+}
+
+#app h1 {
+  border-bottom: 1px solid #ddd;
+  padding: 16px 0;
+}
+
+#app ul {
+  padding: 0;
+  list-style: none;
+}
+
+#app li {
+  line-height: 1.5;
+}
+
+#app li span {
+  cursor: pointer;
+}
+
+#app li span.done {
+  text-decoration: line-through;
+  color: #bbb;
+}
+
+#app button {
+  border-radius: 2px; 
+  border: 1px solid #ddd;
+  background-color: #FFFFFF;
+  transition: .2s;
+}
+
+#app button:hover {
+  background-color: #EEEEEE;
+}
+
+#app input[type="text"] {
+  padding: 2px;
+  border-radius: 2px;
+  border: 1px solid #ddd;
+}
+
+#app input[type="submit"] {
+  border-radius: 2px; 
+  border: 1px solid #ddd;
+  background-color: #FFFFFF;
+  transition: .2s;
+}
+
+#app input[type="submit"]:hover {
+  background-color: #EEEEEE;
+}
