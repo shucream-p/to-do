@@ -21,7 +21,7 @@ new Vue({
     saveLocalStorage () {
       localStorage.setItem('todos', JSON.stringify(this.todos))
     },
-    changeDone () {
+    toggleDone () {
       this.saveLocalStorage()
     },
     addItem () {

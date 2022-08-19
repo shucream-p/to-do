@@ -13,7 +13,7 @@
     <ul>
       <li v-for="(todo, index) in todos" :key="todo.id">
         <div v-if="!todo.isEditing">
-          <input type="checkbox" v-model="todo.isDone" @change="changeDone">
+          <input type="checkbox" v-model="todo.isDone" @change="toggleDone">
           <span :class="{done: todo.isDone}" @click="editItem(index)">{{ todo.title }}</span>
           <button @click="deleteItem(index)">delete</button>
         </div>
